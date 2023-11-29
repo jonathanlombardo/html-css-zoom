@@ -39,10 +39,13 @@ ul {
   --m-space: 8px;
   --l-space: 15px;
   --xl-space: 50px;
+
+  --header-h: 100px;
+  --footer-h: 100px;
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1700px;
   padding: 20px;
   margin: 0 auto;
 }
@@ -54,14 +57,90 @@ ul {
   border: 3px dashed black;
 }
 
-.db::after {
-  content: "this is a debug style";
-  text-align: center;
-  font-size: var(--s-text);
-  display: block;
-  font-weight: 100;
-  font-style: italic;
-  text-decoration: overline;
+/* ---------------------------------------- */
+
+/* # HEADER */
+
+header {
+  height: var(--header-h);
 }
 
-/* ---------------------------------------- */
+header .button-wrapper {
+  text-align: right;
+  /* width: fit-content; */
+}
+
+/* # MAIN */
+
+main > .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: calc(100vh - var(--header-h) - var(--footer-h));
+  overflow: scroll;
+  -ms-overflow-style: none; /* Hide scrollbar IE and Edge */
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+main > .wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+main .window {
+  width: calc((100% / 7) - (2 * var(--s-space)));
+  height: fit-content;
+  position: relative;
+  margin: var(--s-space);
+}
+
+main .window img {
+  width: 100%;
+}
+
+main .window .user-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* # FOOTER */
+
+footer {
+  display: flex;
+  height: var(--footer-h);
+}
+
+footer > .wrapper {
+  display: flex;
+}
+
+footer > .wrapper:nth-child(1) {
+  width: 15%;
+  display: flex;
+}
+
+footer > .wrapper:nth-child(2) {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
+footer > .wrapper:nth-child(3) {
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer .button-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+footer .button-wrapper > button:first-child {
+  flex-grow: 1;
+}
+
+footer > .wrapper [id*="-options"] button {
+  height: 100%;
+}
