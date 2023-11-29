@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 img {
@@ -22,6 +23,58 @@ ul {
   list-style: none;
 }
 
+body {
+  background-color: black;
+}
+
+/* -- BUTTONS */
+
+button,
+span {
+  /* cursor: pointer; */
+  padding: var(--s-space);
+  font-size: var(--s-text);
+  border-width: 0;
+  border-radius: 0;
+}
+
+header button,
+main button {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+header button:hover,
+main button:hover {
+  background-color: rgba(128, 128, 128, 0.75);
+}
+
+header button {
+  margin: var(--s-space);
+  border-radius: 5px;
+}
+
+footer button {
+  background-color: transparent;
+  font-size: var(--l-text);
+}
+
+footer [id*="-options"] button {
+  font-size: var(--s-text);
+}
+
+footer button:hover {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+footer #stream i {
+  color: green;
+}
+
+#end button {
+  color: red;
+  font-size: var(--s-text);
+}
+
 /* -- UTILS */
 
 /* .d-flex{
@@ -35,8 +88,8 @@ ul {
   --l-text: 2rem;
   --xl-text: 2.5rem;
   --xs-space: 3px;
-  --s-space: 5px;
-  --m-space: 8px;
+  --s-space: 8px;
+  --m-space: 10px;
   --l-space: 15px;
   --xl-space: 50px;
 
@@ -63,6 +116,7 @@ ul {
 
 header {
   height: var(--header-h);
+  padding: 0 var(--s-space);
 }
 
 header .button-wrapper {
@@ -109,6 +163,8 @@ main .window .user-details {
 footer {
   display: flex;
   height: var(--footer-h);
+  background-color: #222222;
+  padding: 0 var(--s-space);
 }
 
 footer > .wrapper {
